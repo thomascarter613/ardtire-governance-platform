@@ -1,0 +1,15 @@
+# =============================================================================
+# THIS FILE IS AUTO-GENERATED — DO NOT EDIT MANUALLY
+# =============================================================================
+#
+# Source of truth: typespec/ directory
+#
+# To regenerate:
+#   pnpm tsp compile typespec/
+#
+# To validate without regenerating:
+#   pnpm tsp compile typespec/ --no-emit
+#
+# The TypeSpec compiler writes the canonical OpenAPI 3.1 specification here.
+# Any manual edits to this file will be overwritten on the next compile.
+# =============================================================================

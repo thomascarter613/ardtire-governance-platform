@@ -1,0 +1,21 @@
+# CODEOWNERS
+# Each line is a file pattern followed by one or more owners.
+# The last matching rule takes precedence.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+*                               @thomascarter613
+.github/                        @thomascarter613
+infra/                          @thomascarter613
+docker-compose.yml              @thomascarter613
+mise.toml                       @thomascarter613
+tooling/                        @thomascarter613
+turbo.json                      @thomascarter613
+pnpm-workspace.yaml             @thomascarter613
+package.json                    @thomascarter613
+biome.json                      @thomascarter613
+tsconfig.json                   @thomascarter613
+.github/workflows/              @thomascarter613
+SECURITY.md                     @thomascarter613
+.github/SECURITY.md             @thomascarter613
+renovate.json                   @thomascarter613
+docs/                           @thomascarter613

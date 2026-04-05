@@ -1,0 +1,33 @@
+# Normalize line endings to LF on commit
+* text=auto eol=lf
+
+# Explicitly text files
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf -diff
+justfile text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+*.pdf binary
+
+# GitHub Linguist overrides
+docs/** linguist-documentation
+*.md linguist-documentation
+turbo/generators/** linguist-generated

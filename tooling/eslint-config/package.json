@@ -1,0 +1,8 @@
+{
+  "name": "@ardtire/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ESLint config shim — linting is handled by Biome in this project.",
+  "main": "index.js",
+  "license": "UNLICENSED"
+}

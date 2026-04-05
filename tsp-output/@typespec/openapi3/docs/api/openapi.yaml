@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Ardtire Governance API
+  version: 0.1.0
+  contact:
+    name: Thomas J. Carter
+    email: thomas.carter@appliedinnovationcorp.com
+    url: https://www.ardtiresociety.org
+  license:
+    name: Proprietary
+  description: |-
+    The Ardtire Governance API.
+
+    The canonical governance API for the Ardtire Society. This API is the single
+    authoritative source of truth for all governance state. All governance outcomes,
+    membership records, and audit events originate here.
+
+    When this API and any other system disagree on governance state, this API is correct.
+tags: []
+paths: {}
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+servers:
+  - url: http://localhost:3001
+    description: Local development
+    variables: {}
+  - url: https://staging-api.ardtiresociety.org
+    description: Staging
+    variables: {}
+  - url: https://api.ardtiresociety.org
+    description: Production
+    variables: {}

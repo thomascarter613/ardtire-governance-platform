@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+.output/
+.next/
+.nuxt/
+
+# Turbo
+.turbo/
+
+# Coverage
+coverage/
+*.lcov
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Generated
+generated/
+*.generated.ts
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.suo
+*.sw?
+
+# Keys — never commit private keys
+keys/
+*.pem
+*.key
+!*.pub
+
+# TypeScript
+*.tsbuildinfo
+
+# Temporary
+tmp/
+temp/
+.tmp/

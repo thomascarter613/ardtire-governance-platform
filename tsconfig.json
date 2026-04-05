@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tooling/tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true
+  },
+  "include": [
+    "commitlint.config.ts",
+    "vitest.workspace.ts",
+    "tooling/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "apps",
+    "packages",
+    "dist",
+    ".turbo"
+  ]
+}

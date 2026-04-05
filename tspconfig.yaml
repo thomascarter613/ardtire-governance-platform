@@ -1,0 +1,15 @@
+# TypeSpec compiler configuration.
+# Running `tsp compile typespec/` generates docs/api/openapi.yaml.
+# The generated file is the canonical OpenAPI spec — do not edit it by hand.
+#
+# Install: pnpm add -D -w @typespec/compiler @typespec/http @typespec/rest @typespec/openapi3
+# Compile: pnpm tsp compile typespec/
+# Watch:   pnpm tsp compile typespec/ --watch
+
+emit:
+  - "@typespec/openapi3"
+
+options:
+  "@typespec/openapi3":
+    output-file: "docs/api/openapi.yaml"
+    file-type: yaml

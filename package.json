@@ -1,0 +1,61 @@
+{
+  "name": "ardtire-governance-platform",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A production-grade digital governance platform for the Ardtire Society, supporting membership governance, proposals, deliberation, voting, ratification, publication, and auditable institutional records.",
+  "author": {
+    "name": "Thomas J. Carter",
+    "email": "thomas.carter@appliedinnovationcorp.com",
+    "url": "https://www.ardtiresociety.org"
+  },
+  "license": "UNLICENSED",
+  "homepage": "https://www.ardtiresociety.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-j-carter/ardtire-governance-platform.git"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10.6.2"
+  },
+  "packageManager": "pnpm@10.6.2",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "typecheck": "turbo typecheck",
+    "check": "biome check .",
+    "coverage": "vitest run --coverage",
+    "clean": "turbo clean",
+    "db:generate": "turbo db:generate",
+    "db:migrate": "turbo db:migrate",
+    "db:seed": "turbo db:seed",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "deps:check": "syncpack list-mismatches",
+    "deps:fix": "syncpack fix-mismatches",
+    "typespec:compile": "tsp compile typespec/",
+    "typespec:validate": "tsp compile typespec/ --no-emit",
+    "typespec:watch": "tsp compile typespec/ --watch"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "2.27.12",
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
+    "@commitlint/types": "19.8.0",
+    "@typespec/compiler": "0.63.0",
+    "@typespec/http": "0.63.0",
+    "@typespec/openapi": "0.63.0",
+    "@typespec/openapi3": "0.63.0",
+    "@typespec/rest": "0.63.0",
+    "knip": "5.50.5",
+    "lefthook": "1.11.13",
+    "syncpack": "13.0.0",
+    "turbo": "2.5.0",
+    "typescript": "5.8.3",
+    "vitest": "3.1.1"
+  }
+}

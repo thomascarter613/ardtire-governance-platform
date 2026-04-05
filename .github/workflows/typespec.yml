@@ -1,0 +1,48 @@
+name: TypeSpec
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "typespec/**"
+      - "tspconfig.yaml"
+      - "docs/api/openapi.yaml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "typespec/**"
+      - "tspconfig.yaml"
+      - "docs/api/openapi.yaml"
+
+jobs:
+  compile:
+    name: Compile and Validate TypeSpec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.6.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Compile TypeSpec
+        run: pnpm typespec:compile
+
+      - name: Assert openapi.yaml was not modified uncommitted
+        run: |
+          if ! git diff --quiet docs/api/openapi.yaml; then
+            echo ""
+            echo "ERROR: docs/api/openapi.yaml is out of sync with the TypeSpec source."
+            echo "Run 'pnpm typespec:compile' locally and commit the result."
+            echo ""
+            git diff docs/api/openapi.yaml
+            exit 1
+          fi
+
+      - name: Validate generated OpenAPI with Redocly
+        # Pinned to a specific version. Renovate will keep this current.
+        run: npx @redocly/cli@1.25.0 lint docs/api/openapi.yaml

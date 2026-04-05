@@ -1,0 +1,63 @@
+{
+  "name": "@ardtire/observability",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Unified OpenTelemetry SDK initialization, tracer, metrics, structured logger, and Hono middleware for the Ardtire platform.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./sdk": {
+      "import": "./dist/sdk.js",
+      "types": "./dist/sdk.d.ts"
+    },
+    "./middleware/hono": {
+      "import": "./dist/middleware/hono.js",
+      "types": "./dist/middleware/hono.d.ts"
+    },
+    "./middleware/correlation": {
+      "import": "./dist/middleware/correlation.js",
+      "types": "./dist/middleware/correlation.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "1.9.0",
+    "@opentelemetry/context-async-hooks": "1.30.1",
+    "@opentelemetry/core": "1.30.1",
+    "@opentelemetry/exporter-metrics-otlp-http": "0.57.1",
+    "@opentelemetry/exporter-trace-otlp-http": "0.57.1",
+    "@opentelemetry/instrumentation": "0.57.1",
+    "@opentelemetry/instrumentation-http": "0.57.1",
+    "@opentelemetry/resources": "1.30.1",
+    "@opentelemetry/sdk-metrics": "1.30.1",
+    "@opentelemetry/sdk-node": "0.57.1",
+    "@opentelemetry/sdk-trace-node": "1.30.1",
+    "@opentelemetry/semantic-conventions": "1.28.0"
+  },
+  "devDependencies": {
+    "@ardtire/tsconfig": "workspace:*",
+    "@ardtire/vitest-config": "workspace:*",
+    "hono": "4.7.5",
+    "typescript": "5.8.3",
+    "vitest": "3.1.1"
+  },
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "hono": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "hono": {
+      "optional": true
+    }
+  }
+}

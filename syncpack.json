@@ -1,0 +1,25 @@
+{
+  "$schema": "https://unpkg.com/syncpack@latest/schema.json",
+  "versionGroups": [
+    {
+      "label": "Local workspace packages must use the workspace protocol",
+      "packages": ["**"],
+      "dependencies": ["@ardtire/*"],
+      "pinVersion": "workspace:*"
+    }
+  ],
+  "semverGroups": [
+    {
+      "label": "All versions must be exact — no ranges",
+      "packages": ["**"],
+      "dependencies": ["**"],
+      "range": ""
+    }
+  ],
+  "source": [
+    "package.json",
+    "apps/*/package.json",
+    "packages/*/package.json",
+    "tooling/*/package.json"
+  ]
+}

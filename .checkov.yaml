@@ -1,0 +1,43 @@
+# Checkov policy-as-code configuration.
+# https://www.checkov.io/2.Basics/CLI%20Command%20Reference.html
+
+# Scan these directories and files for IaC misconfigurations.
+directory:
+  - infra
+  - .github/workflows
+
+file:
+  - docker-compose.yml
+
+# Output formats
+output:
+  - cli
+  - json
+
+# Severity thresholds.
+# `soft-fail-on-severity` → report but exit 0 (warning only).
+# `hard-fail-on-severity` → report and exit 1 (pipeline fails).
+# These keys accept severity level strings: INFO | LOW | MEDIUM | HIGH | CRITICAL
+soft-fail-on-severity:
+  - LOW
+  - MEDIUM
+
+hard-fail-on-severity:
+  - HIGH
+  - CRITICAL
+
+# Suppress known false-positives with documented justifications.
+# Format: list of check IDs. Each suppression must have a comment explaining why.
+skip-check:
+  # docker-compose.yml: Keycloak runs dev-mem and start-dev — TLS is terminated
+  # at the host/reverse-proxy layer in all non-local environments.
+  - CKV_DOCKER_2
+  # docker-compose.yml: KEYCLOAK_ADMIN_PASSWORD is a local-development default
+  # only. Production secrets are injected via environment variables, never committed.
+  - CKV_SECRET_6
+  # .github/workflows: Third-party action SHA pinning is tracked and updated
+  # automatically by Renovate. Checkov's check is redundant given that control.
+  - CKV_GH_1
+
+# Compact output for CI log readability.
+compact: true

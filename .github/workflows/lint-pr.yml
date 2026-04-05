@@ -1,0 +1,57 @@
+name: Lint PR
+
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  lint-pr-title:
+    name: Lint PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            chore
+            refactor
+            perf
+            test
+            ci
+            build
+            revert
+          scopes: |
+            repo
+            docs
+            planning
+            architecture
+            adr
+            contracts
+            api
+            web
+            admin
+            member-portal
+            cms
+            governance
+            auth
+            db
+            search
+            infra
+            docker
+            ci
+            deps
+            security
+            observability
+            accessibility
+            testing
+            tooling
+          requireScope: false
+          subjectPattern: ^[A-Z].+$
+          subjectPatternError: PR title subject must begin with an uppercase letter.

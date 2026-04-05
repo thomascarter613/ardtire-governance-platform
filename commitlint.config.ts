@@ -1,0 +1,63 @@
+import type { UserConfig } from "@commitlint/types";
+
+const config: UserConfig = {
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    "type-enum": [
+      2,
+      "always",
+      [
+        "feat",
+        "fix",
+        "docs",
+        "chore",
+        "refactor",
+        "perf",
+        "test",
+        "ci",
+        "build",
+        "revert",
+      ],
+    ],
+    "scope-enum": [
+      1,
+      "always",
+      [
+        "repo",
+        "docs",
+        "planning",
+        "architecture",
+        "adr",
+        "contracts",
+        "api",
+        "web",
+        "admin",
+        "member-portal",
+        "cms",
+        "governance",
+        "auth",
+        "db",
+        "search",
+        "infra",
+        "docker",
+        "ci",
+        "deps",
+        "security",
+        "observability",
+        "accessibility",
+        "testing",
+        "tooling",
+      ],
+    ],
+    "scope-case": [2, "always", "kebab-case"],
+    "subject-case": [2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]],
+    "subject-empty": [2, "never"],
+    "subject-full-stop": [2, "never", "."],
+    "body-leading-blank": [1, "always"],
+    "body-max-line-length": [2, "always", 100],
+    "footer-leading-blank": [1, "always"],
+    "header-max-length": [2, "always", 100],
+  },
+};
+
+export default config;

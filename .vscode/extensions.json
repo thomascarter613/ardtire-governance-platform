@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "EditorConfig.EditorConfig",
+    "eamodio.gitlens",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.vscode-typescript-next",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker",
+    "vitest.explorer",
+    "yoavbls.pretty-ts-errors",
+    "mikestead.dotenv",
+    "Prisma.prisma",
+    "tamasfe.even-better-toml"
+  ],
+  "unwantedRecommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ]
+}

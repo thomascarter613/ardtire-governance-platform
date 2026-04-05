@@ -1,0 +1,32 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "apps/*/src/index.ts",
+    "apps/*/src/main.ts",
+    "packages/*/src/index.ts"
+  ],
+  "project": [
+    "apps/*/src/**/*.ts",
+    "packages/*/src/**/*.ts",
+    "tooling/*/src/**/*.ts"
+  ],
+  "ignore": [
+    "**/dist/**",
+    "**/.turbo/**",
+    "**/coverage/**",
+    "**/generated/**",
+    "**/node_modules/**",
+    "turbo/generators/**",
+    "docs/**",
+    "**/*.d.ts",
+    "**/*.config.ts",
+    "**/*.config.js"
+  ],
+  "ignoreDependencies": [
+    "@types/*"
+  ],
+  "ignoreWorkspaces": [
+    "tooling/eslint-config",
+    "tooling/prettier-config"
+  ]
+}
