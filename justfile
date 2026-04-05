@@ -179,3 +179,44 @@ ci-local:
   just check
   just policy-check
   just build
+
+# Context
+context-validate:
+  node scripts/context/validate.mjs
+
+context-inject:
+  node scripts/context/inject.mjs
+
+context-check: context-validate
+  @echo "Context OK"
+
+
+# Validate the context layer (same check that runs in CI and pre-push)
+context-validate:
+    node scripts/context/validate.mjs
+
+# Generate a context bundle (manifest + state) → stdout
+# Pipe to clipboard: just context-inject | pbcopy    (macOS)
+#                    just context-inject | xclip -sel clip  (Linux)
+context-inject:
+    node scripts/context/inject.mjs
+
+# Generate a full context bundle (all four context files) → stdout
+context-inject-full:
+    node scripts/context/inject.mjs --full
+
+# Generate a context bundle and write to .context.md (gitignored)
+context-bundle:
+    node scripts/context/inject.mjs --full --output .context.md
+    @echo "Bundle written to .context.md"
+
+# Scaffold context/ files for a new project (idempotent — skips existing files)
+context-scaffold:
+    @echo "Scaffolding context/ layer..."
+    @mkdir -p context
+    @[ -f context/manifest.md ]     || cp scripts/context/templates/manifest.md     context/manifest.md
+    @[ -f context/state.md ]        || cp scripts/context/templates/state.md        context/state.md
+    @[ -f context/architecture.md ] || cp scripts/context/templates/architecture.md context/architecture.md
+    @[ -f context/conventions.md ]  || cp scripts/context/templates/conventions.md  context/conventions.md
+    @[ -f CLAUDE.md ]                  || cp scripts/context/templates/CLAUDE.md       CLAUDE.md
+    @echo "Done. Fill in the placeholder values in context/manifest.md to begin."

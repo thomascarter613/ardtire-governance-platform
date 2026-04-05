@@ -1,0 +1,154 @@
+.
+├── apps
+├── biome.json
+├── CHANGELOG.md
+├── cliff.toml
+├── CODE_OF_CONDUCT.md
+├── commitlint.config.ts
+├── CONTRIBUTING.md
+├── docker-compose.yml
+├── docs
+│   ├── api
+│   │   └── openapi.yaml
+│   ├── architecture
+│   │   ├── constraints.md
+│   │   ├── decisions
+│   │   │   └── ADR-000-template.md
+│   │   ├── diagrams
+│   │   ├── overview.md
+│   │   ├── quality-attributes.md
+│   │   └── system-context.md
+│   ├── development
+│   │   ├── coding-standards.md
+│   │   ├── getting-started.md
+│   │   ├── git-workflow.md
+│   │   └── testing-strategy.md
+│   ├── domain
+│   │   ├── glossary.md
+│   │   └── ubiquitous-language.md
+│   ├── onboarding
+│   │   └── new-contributor.md
+│   ├── operations
+│   │   ├── monitoring.md
+│   │   └── observability.md
+│   ├── planning
+│   │   ├── milestones.md
+│   │   ├── out-of-scope.md
+│   │   ├── roadmap.md
+│   │   ├── stakeholders.md
+│   │   └── vision.md
+│   ├── runbooks
+│   │   └── incident-response.md
+│   ├── security
+│   │   └── threat-model.md
+│   └── spec
+│       ├── functional-requirements.md
+│       └── non-functional-requirements.md
+├── infra
+│   └── README.md
+├── justfile
+├── knip.json
+├── lefthook.yml
+├── LICENSE
+├── mise.toml
+├── node_modules
+│   ├── @biomejs
+│   │   └── biome -> ../.pnpm/@biomejs+biome@1.9.4/node_modules/@biomejs/biome
+│   ├── @changesets
+│   │   └── cli -> ../.pnpm/@changesets+cli@2.27.12/node_modules/@changesets/cli
+│   ├── @commitlint
+│   │   ├── cli -> ../.pnpm/@commitlint+cli@19.8.0_@types+node@25.5.2_typescript@5.8.3/node_modules/@commitlint/cli
+│   │   ├── config-conventional -> ../.pnpm/@commitlint+config-conventional@19.8.0/node_modules/@commitlint/config-conventional
+│   │   └── types -> ../.pnpm/@commitlint+types@19.8.0/node_modules/@commitlint/types
+│   ├── knip -> .pnpm/knip@5.50.5_@types+node@25.5.2_typescript@5.8.3/node_modules/knip
+│   ├── lefthook -> .pnpm/lefthook@1.11.13/node_modules/lefthook
+│   ├── syncpack -> .pnpm/syncpack@13.0.0_typescript@5.8.3/node_modules/syncpack
+│   ├── turbo -> .pnpm/turbo@2.5.0/node_modules/turbo
+│   ├── typescript -> .pnpm/typescript@5.8.3/node_modules/typescript
+│   ├── @typespec
+│   │   ├── compiler -> ../.pnpm/@typespec+compiler@0.63.0/node_modules/@typespec/compiler
+│   │   ├── http -> ../.pnpm/@typespec+http@0.63.0_@typespec+compiler@0.63.0/node_modules/@typespec/http
+│   │   ├── openapi -> ../.pnpm/@typespec+openapi@0.63.0_@typespec+compiler@0.63.0_@typespec+http@0.63.0_@typespec+compiler@0.63.0_/node_modules/@typespec/openapi
+│   │   ├── openapi3 -> ../.pnpm/@typespec+openapi3@0.63.0_@typespec+compiler@0.63.0_@typespec+http@0.63.0_@typespec+com_38b0ff2f9c2fbe7c6ffad89da85895ad/node_modules/@typespec/openapi3
+│   │   └── rest -> ../.pnpm/@typespec+rest@0.63.0_@typespec+compiler@0.63.0_@typespec+http@0.63.0_@typespec+compiler@0.63.0_/node_modules/@typespec/rest
+│   └── vitest -> .pnpm/vitest@3.1.1_@types+node@25.5.2_jiti@2.6.1_yaml@2.5.1/node_modules/vitest
+├── package.json
+├── packages
+│   └── observability
+│       ├── node_modules
+│       │   ├── @ardtire
+│       │   │   ├── tsconfig -> ../../../../tooling/tsconfig
+│       │   │   └── vitest-config -> ../../../../tooling/vitest-config
+│       │   ├── hono -> ../../../node_modules/.pnpm/hono@4.7.5/node_modules/hono
+│       │   ├── @opentelemetry
+│       │   │   ├── api -> ../../../../node_modules/.pnpm/@opentelemetry+api@1.9.0/node_modules/@opentelemetry/api
+│       │   │   ├── context-async-hooks -> ../../../../node_modules/.pnpm/@opentelemetry+context-async-hooks@1.30.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/context-async-hooks
+│       │   │   ├── core -> ../../../../node_modules/.pnpm/@opentelemetry+core@1.30.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/core
+│       │   │   ├── exporter-metrics-otlp-http -> ../../../../node_modules/.pnpm/@opentelemetry+exporter-metrics-otlp-http@0.57.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/exporter-metrics-otlp-http
+│       │   │   ├── exporter-trace-otlp-http -> ../../../../node_modules/.pnpm/@opentelemetry+exporter-trace-otlp-http@0.57.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/exporter-trace-otlp-http
+│       │   │   ├── instrumentation -> ../../../../node_modules/.pnpm/@opentelemetry+instrumentation@0.57.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/instrumentation
+│       │   │   ├── instrumentation-http -> ../../../../node_modules/.pnpm/@opentelemetry+instrumentation-http@0.57.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/instrumentation-http
+│       │   │   ├── resources -> ../../../../node_modules/.pnpm/@opentelemetry+resources@1.30.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/resources
+│       │   │   ├── sdk-metrics -> ../../../../node_modules/.pnpm/@opentelemetry+sdk-metrics@1.30.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/sdk-metrics
+│       │   │   ├── sdk-node -> ../../../../node_modules/.pnpm/@opentelemetry+sdk-node@0.57.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/sdk-node
+│       │   │   ├── sdk-trace-node -> ../../../../node_modules/.pnpm/@opentelemetry+sdk-trace-node@1.30.1_@opentelemetry+api@1.9.0/node_modules/@opentelemetry/sdk-trace-node
+│       │   │   └── semantic-conventions -> ../../../../node_modules/.pnpm/@opentelemetry+semantic-conventions@1.28.0/node_modules/@opentelemetry/semantic-conventions
+│       │   ├── typescript -> ../../../node_modules/.pnpm/typescript@5.8.3/node_modules/typescript
+│       │   └── vitest -> ../../../node_modules/.pnpm/vitest@3.1.1_@types+node@25.5.2_jiti@2.6.1_yaml@2.5.1/node_modules/vitest
+│       ├── package.json
+│       ├── src
+│       │   ├── index.ts
+│       │   ├── logger.ts
+│       │   ├── metrics.ts
+│       │   ├── middleware
+│       │   │   ├── correlation.ts
+│       │   │   └── hono.ts
+│       │   ├── sdk.ts
+│       │   └── tracer.ts
+│       ├── tsconfig.json
+│       └── vitest.config.ts
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── README.md
+├── renovate.json
+├── scaffold-addendum.sh
+├── scaffold-patch-01.sh
+├── SECURITY.md
+├── syncpack.json
+├── tooling
+│   ├── eslint-config
+│   │   ├── index.js
+│   │   └── package.json
+│   ├── prettier-config
+│   │   ├── index.js
+│   │   └── package.json
+│   ├── tsconfig
+│   │   ├── base.json
+│   │   └── package.json
+│   └── vitest-config
+│       ├── base.ts
+│       ├── node_modules
+│       │   └── vitest -> ../../../node_modules/.pnpm/vitest@3.1.1_@types+node@25.5.2_jiti@2.6.1_yaml@2.5.1/node_modules/vitest
+│       └── package.json
+├── tree.txt
+├── tsconfig.json
+├── tspconfig.yaml
+├── tsp-output
+│   └── @typespec
+│       └── openapi3
+│           └── docs
+│               └── api
+│                   └── openapi.yaml
+├── turbo
+│   └── generators
+│       └── templates
+├── turbo.json
+├── typespec
+│   ├── common.tsp
+│   ├── governance.tsp
+│   ├── health.tsp
+│   ├── main.tsp
+│   └── members.tsp
+└── vitest.workspace.ts
+
+77 directories, 75 files

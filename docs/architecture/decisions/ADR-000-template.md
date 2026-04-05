@@ -1,51 +1,83 @@
-# ADR-000: Title
+# ADR-NNN: Title
 
-**Date:** YYYY-MM-DD
-**Status:** Proposed | Accepted | Deprecated | Superseded by ADR-XXX
-**Deciders:** Thomas J. Carter
+status: open
+date: YYYY-MM-DD
+deciders: <!-- name(s) or role(s) -->
+supersedes: <!-- ADR-NNN if replacing a prior decision, otherwise omit -->
+superseded-by: <!-- ADR-NNN if this decision was later reversed, otherwise omit -->
 
 ---
 
 ## Context
 
-<!-- What is the situation or problem that necessitates this decision?
-     What forces are at play — technical, governance, organizational, legal? -->
+<!--
+What situation, constraint, or problem forced this decision?
+Be specific. Include system state at the time, not just the abstract problem.
+A future reader (human or AI) should understand *why this came up now*.
+-->
+
+---
 
 ## Decision
 
-<!-- What is the decision? State it clearly and unambiguously. -->
+<!--
+State the decision in one or two sentences.
+Active voice: "We will use X" not "It was decided that X".
+-->
 
-## Rationale
+---
 
-<!-- Why was this decision made?
-     What options were considered and why were they rejected?
-     What evidence or reasoning supports this choice? -->
+## Options Considered
+
+<!--
+What alternatives were evaluated? For each:
+  - What it is
+  - Why it was a credible option
+  - Why it was rejected (or not chosen as the primary)
+
+Omit options that were trivially non-starters.
+-->
+
+### Option A: <!-- name -->
+
+- **Pros:** 
+- **Cons:** 
+- **Outcome:** Not chosen because…
+
+### Option B: <!-- name — the chosen option -->
+
+- **Pros:** 
+- **Cons:** 
+- **Outcome:** ✓ Chosen
+
+---
 
 ## Consequences
 
-### Positive
+<!--
+What does this decision change, constrain, or enable going forward?
+Include both positive and negative consequences.
+List any follow-on work or decisions this creates.
+-->
 
-<!-- What improves as a result of this decision? -->
+**Positive:**
+- 
 
-### Negative
+**Negative / tradeoffs:**
+- 
 
-<!-- What gets harder, more complex, or constrained? -->
+**Follow-on work:**
+- 
 
-### Neutral
+---
 
-<!-- What changes without being clearly better or worse? -->
+## Validation
 
-## Alternatives Considered
+<!--
+How will we know this decision was correct (or not)?
+e.g. "Performance benchmark at 6 months", "Revisit if team size exceeds N"
+-->
 
-| Alternative | Reason Rejected |
-|---|---|
-| Option A | ... |
-| Option B | ... |
+---
 
-## Related Decisions
-
-<!-- Links to related ADRs -->
-
-## References
-
-<!-- External documentation, specifications, or evidence -->
+*Accepted: YYYY-MM-DD*

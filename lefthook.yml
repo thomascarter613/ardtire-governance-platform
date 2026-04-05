@@ -10,3 +10,18 @@ commit-msg:
   commands:
     commitlint:
       run: pnpm commitlint --edit {1}
+
+pre-push:
+  commands:
+    context-freshness:
+      run: node scripts/context/validate.mjs
+      fail_text: "state.md is stale. Update ai-context/state.md before pushing."
+
+pre-push:
+  commands:
+    context-validate:
+      run: node scripts/context/validate.mjs
+      fail_text: |
+        Context validation failed.
+        Fix the issues above, then update ai-context/state.md and commit before pushing.
+        To bypass (use sparingly): git push --no-verify

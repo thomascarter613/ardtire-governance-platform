@@ -56,3 +56,10 @@ keys/
 tmp/
 temp/
 .tmp/
+
+
+# Generated context bundle (inject output) — never commit generated artifacts
+.context.md
+
+# Local context overrides (machine-specific session notes, if you add that feature later)
+context/*.local.md
