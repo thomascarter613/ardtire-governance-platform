@@ -2,7 +2,7 @@
 
 _Last updated: YYYY-MM-DD_
 
-> **The only ai-context file updated every session.**
+> **The only context file updated every session.**
 > Update this at the end of every working session before committing.
 > The `context validate` check will fail if this file goes stale.
 

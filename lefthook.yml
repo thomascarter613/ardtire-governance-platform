@@ -15,7 +15,7 @@ pre-push:
   commands:
     context-freshness:
       run: node scripts/context/validate.mjs
-      fail_text: "state.md is stale. Update ai-context/state.md before pushing."
+      fail_text: "state.md is stale. Update context/state.md before pushing."
 
 pre-push:
   commands:
@@ -23,5 +23,5 @@ pre-push:
       run: node scripts/context/validate.mjs
       fail_text: |
         Context validation failed.
-        Fix the issues above, then update ai-context/state.md and commit before pushing.
+        Fix the issues above, then update context/state.md and commit before pushing.
         To bypass (use sparingly): git push --no-verify

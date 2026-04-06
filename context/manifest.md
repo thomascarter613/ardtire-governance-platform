@@ -40,7 +40,7 @@
 
 ## Active Phase
 
-See: [`ai-context/state.md`](./state.md)
+See: [`context/state.md`](./state.md)
 
 ---
 
